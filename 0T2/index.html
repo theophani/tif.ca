@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>Skule(tm) Nite 2002</title>
+
+<style>
+<!--
+A{text-decoration:none}
+-->
+</style>
+
+<script language="Javascript">
+
+        browser = (((navigator.appName == "Netscape") && ( 3<= parseInt(navigator.appVersion) )) || ((navigator.appName == "Microsoft Internet Explorer") && ( 4 <= parseInt(navigator.appVersion) )))
+
+        if ( browser) {
+
+                after = new MakeArray(7)
+     
+                after[1].src = "graphics/brains-a.gif"
+                after[2].src = "graphics/tickets-c.gif"
+                after[3].src = "graphics/cast-a.gif"
+                after[4].src = "graphics/contact_us-a.gif"
+                after[5].src = "graphics/history-a.gif"
+                after[6].src = "graphics/get_involved-a.gif"
+                after[7].src = "graphics/sponsors-a.gif"
+
+                before = new MakeArray(7)
+     
+                before[1].src = "graphics/brains-b.gif"
+                before[2].src = "graphics/tickets-b.gif"
+                before[3].src = "graphics/cast-b.gif"
+                before[4].src = "graphics/contact_us-b.gif"
+                before[5].src = "graphics/history-b.gif"
+                before[6].src = "graphics/get_involved-b.gif"
+                before[7].src = "graphics/sponsors-b.gif"
+
+        }
+       
+        function MakeArray(n) {
+                this.length = n
+                for (var i = 1; i<=n; i++) {
+                        this[i] = new Image()
+                }
+              return this
+        }
+
+
+        function msover(doc,aft) {
+                if ( browser && aft ) {
+                        document.images[doc].src = after[aft].src
+                }
+        }       
+
+
+        function msout(doc,bef) {
+                if ( browser && bef ) {
+                        document.images[doc].src = before[bef].src
+                }                   
+        }
+
+// -->
+
+</script>
+
+</head>
+
+<map name="brains">
+<area shape="rect" coords="343,30,548,109" href="brains.html"
+        onMouseOver = "msover(0,1); self.status='http://www.skulenite.skule.ca/brains.html'; return true"
+        onMouseOut  = "msout(0,1); self.status='Skule(tm) Nite 2002'; return true">
+</map>
+
+<map name="tickets">
+<area shape="rect" coords="24,0,244,143" href="tickets.html"
+        onMouseOver = "msover(1,2); self.status='http://www.skulenite.skule.ca/tickets.html'; return true"
+        onMouseOut  = "msout(1,2); self.status='Skule(tm) Nite 2002'; return true">
+<area shape="rect" coords="244,91,265,143" href="get_involved.html"
+        onMouseOver = "msover(5,6); self.status='http://www.skulenite.skule.ca/get_involved.html'; return true"
+        onMouseOut  = "msout(5,6); self.status='Skule(tm) Nite 2002'; return true">
+</map>
+
+<map name="cast">
+<area shape="rect" coords="0,0,202,91" href="cast.html"
+        onMouseOver = "msover(2,3); self.status='http://www.skulenite.skule.ca/cast.html'; return true"
+        onMouseOut  = "msout(2,3); self.status='Skule(tm) Nite 2002'; return true">
+<area shape="rect" coords="88,112,202,143" href="sponsors.html"
+        onMouseOver = "msover(6,7); self.status='http://www.skulenite.skule.ca/sponsors.html'; return true"
+        onMouseOut  = "msout(6,7); self.status='Skule(tm) Nite 2002'; return true">
+<area shape="rect" coords="0,91,25,143" href="get_involved.html"
+        onMouseOver = "msover(5,6); self.status='http://www.skulenite.skule.ca/get_involved.html'; return true"
+        onMouseOut  = "msout(5,6); self.status='Skule(tm) Nite 2002'; return true">
+</map>
+
+<map name="contact_us">
+<area shape="rect" coords="0,49,86,123" href="contact_us.html"
+        onMouseOver = "msover(3,4); self.status='http://www.skulenite.skule.ca/contact_us.html'; return true"
+        onMouseOut  = "msout(3,4); self.status='Skule(tm) Nite 2002'; return true">
+</map>
+
+<map name="history">
+<area shape="rect" coords="49,36,220,93" href="history.html"
+        onMouseOver = "msover(4,5); self.status='http://www.skulenite.skule.ca/history.html' ;return true"
+        onMouseOut  = "msout(4,5); self.status='Skule(tm) Nite 2002'; return true">
+</map>
+
+<map name="get_involved">
+<area shape="rect" coords="0,0,132,124" href="get_involved.html"
+        onMouseOver = "msover(5,6); self.status='http://www.skulenite.skule.ca/get_involved.html'; return true"
+        onMouseOut  = "msout(5,6); self.status='Skule(tm) Nite 2002'; return true">
+</map>
+
+<map name="sponsors">
+<area shape="rect" coords="0,0,151,47" href="sponsors.html"
+        onMouseOver = "msover(6,7); self.status='http://www.skulenite.skule.ca/sponsors.html'; return true"
+        onMouseOut  = "msout(6,7); self.status='Skule(tm) Nite 2002'; return true">
+<area shape="rect" coords="115,47,213,100" href="sponsors.html"
+        onMouseOver = "msover(6,7); self.status='http://www.skulenite.skule.ca/sponsors.html'; return true"
+        onMouseOut  = "msout(6,7); self.status='Skule(tm) Nite 2002'; return true">
+</map>
+
+<body bgcolor="white" text="black" link="black" vlink="black" alink="red">
+
+<center>
+
+<table width="100%" height="100%"><tr><td valign="center" align="center">
+
+<table cellpadding="0" cellspacing="0" width="600">
+
+<tr><td>
+
+<img
+src="graphics/brains-b.gif" width="600" height="109" border="0" 
+  ismap usemap="#brains"><br><nobr><img
+src="graphics/tickets-b.gif" width="265" height="143" border="0"
+  ismap usemap="#tickets"><img
+src="graphics/cast-b.gif" width="202"  height="143" border="0"
+  ismap usemap="#cast"><img
+src="graphics/contact_us-b.gif" width="133" height="143"  border="0"
+  ismap usemap="#contact_us"></nobr><br><nobr><img
+src="graphics/history-b.gif" width="220" height="148" border="0"
+  ismap usemap="#history"><img
+src="graphics/get_involved-b.gif" width="132" height="148" border="0"
+  ismap usemap="#get_involved"><img
+src="graphics/sponsors-b.gif" width="248" height="148" border="0"
+  ismap usemap="#sponsors"></nobr></td>
+
+</tr>
+
+<tr>
+  <td><font face="Verdana, Arial, Helvetica, sans-serif" size="-2"><b>
+      <center>
+      [ <a href="tickets.html">tickets</a>
+      | <a href="history.html">history</a>
+      | <a href="brains.html">brains</a>
+      | <a href="cast.html">cast</a>
+      | <a href="get_involved.html">get involved</a>
+      | <a href="sponsors.html">sponsors</a>
+      | <a href="contact_us.html">contact us</a>
+      | <a href="news.html">news</a>
+      ] <br>
+
+
+<center>
+
+<font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="red">
+The 2002 show is over ... but you can still peruse this old site</font></center></td>
+
+</tr>
+
+
+</table></td></tr></table>
+
+</body>
+</html>
+
