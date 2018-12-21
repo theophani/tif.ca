@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>3D visualizion of the DOM Layers</title>
+<!-- note: new location is http://tif.ca/visualize3d -->
+<style>
+
+html { overflow-y: scroll; }
+
+body {
+  background-color: #0080C0; margin: 0; color: #FFF;
+  padding: 50px; margin: 0; margin-bottom: 100px;
+  font-size: 160%; text-shadow: #004060 2px 2px 1px;
+  font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  font-weight:normal; line-height: 1.25em;
+}
+a { color: #ffff00; text-decoration: none; }
+a.h1 {
+  cursor:move;
+  border: none; background-color: #fff; color: #004060; text-shadow: none;
+  display: inline-block; padding: 0.5em 1em; line-height: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius:    1em;
+  border-radius:         1em;
+}
+p { font-size: 80%; text-shadow: #004060 1px 1px 1px; }
+
+div {
+  padding: 0.5em; margin: 0.5em;
+  text-shadow: #000000 1px 1px 1px;
+}
+
+#d10  { background-color: #000; }
+#d11  { background-color: #444; }
+#d12  { background-color: #888; }
+
+#d100 { background-color: #555; }
+#d101 { background-color: #666; }
+#d102 { background-color: #777; }
+
+#d120 { background-color: #999; }
+#d121 { background-color: #aaa; }
+#d122 { background-color: #bbb; }
+
+p.footnote {
+  font-size: 80%; line-height: 1.875em; margin-top: 1.875em; opacity: 0.5;
+}
+p.footnote:hover { opacity: 1.0; }
+p.footnote span { font-size: 125%; }
+
+</style> 
+</head>
+<body>
+  <a class="h1" title="Click to active. OR use anywhere! Drag to your bookmark bar." href="javascript: (function(){ var elem = document.createElement('script'); elem.setAttribute('src','http://tif.ca/visualize3d/3d.js?t='+(new Date().getTime())); document.body.appendChild(elem); }());">Visualize in 3D</a>
+  
+  <p>Click on the above button to activate. OR drag it into your bookmark bar, and use while viewing any page.</p>
+  
+  body 0
+  <div id="d10">
+    sibling 1,0
+    
+    <div id="d100">
+      sibling 1,0,0
+
+      <!--      
+      <p>&gt; btw: why exactly doesn't it work on chrome?</p>
+      
+      <p>Chrome does not yet support translation along the z-axis. I read this
+      around 19:30 this evening:</p>
+      
+      <p>"To make matters more perplexing, Safari'€™s WebKit cousin Chrome
+      currently accepts 3-D transform declarations, but renders them in 2-D
+      space. Chrome team member Paul Irish, says that 3-D transforms are on
+      the horizon, perhaps in one of the next 8.0 releases."</p>
+      
+      <p>From: http://24ways.org/2010/intro-to-css-3d-transforms</p>
+      
+      <p>The above was published on Monday but I only saw it Tuesday, and only
+      read after banging away on my keyboard for a couple hours, perplexed.
+      My Monday night/ Tuesday morning troubleshooting led me to believe
+      Safari and Chrome were the same, but (1) I was playing a visual trick
+      on myself when I was mistakenly using a translation along the y-axis
+      and (2) I failed to use "transform-style: preserve-3d" before, which
+      caused Safari to act just like Chrome. That attribute is the real
+      magic, it turns out. All the details are in the article above.</p>
+      -->
+      
+    </div>
+    <div id="d101">
+      sibling 1,0,1
+    </div>
+    <div id="d102">
+      sibling 1,0,2
+    </div>
+  </div>
+  <div id="d11">
+    sibling 1,1
+  </div>
+  <div id="d12">
+    sibling 1,2
+    <div id="d120">
+      sibling 1,2,0
+    </div>
+    <div id="d121">
+      sibling 1,2,1
+    </div>
+    <div id="d122">
+      sibling 1,2,2
+    </div>
+  </div>
+
+  * safari webkit only. chrome does not yet support z-translations
+  
+  <p class="footnote"> 
+    <a href="http://tif.ca/">tiffany</a> made this
+  </p>
+
+  <noscript>
+    <pre>
+    Sorry, this prototype/thought-experiment
+    relies entirely on JavaScript, which you 
+    either do not have, or have turned off :/
+    </pre>
+  </noscript>
+
+</body>
+</html>

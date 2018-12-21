@@ -1,0 +1,122 @@
+<style>
+.graph {
+  background-color: #333;
+  color: #ddd;
+  font-family: Arial, Verdana;
+  font-size: 16px;
+  padding: 40px;
+}
+.bar {
+  position: relative;
+  width: 60px;
+}
+.bar > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bar > div {
+  background-color: gold;
+}
+.bar > label {
+  top: -40px;
+  left: 0;
+  width: 60px;
+  text-align: center;
+}
+.bar > label.year {
+  top: auto;
+  bottom: -25px;
+  left: 20px;
+  width: 40px;
+}
+
+.sides {
+  height: 100%;
+}
+.front {
+  opacity: 0.75;
+  width: 40px;
+  top: 0;
+  left: 20px;
+  -webkit-transform: skewY(-10deg);
+  -webkit-transform-origin: 0 0;
+}
+.side {
+  opacity: 0.25;
+  width: 20px;
+  top: 0;
+  -webkit-transform: skewY(20deg);
+  -webkit-transform-origin: 20px 0;
+}
+.top {
+  opacity: 0.5;
+  width: 40px;
+  height: 11px;
+  left: 0;
+  top: -7px;
+  -webkit-transform: skewY(-10.4deg) skewX(61deg);
+  -webkit-transform-origin: 0 0;
+}
+.bar-holder {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  margin-top: 40px;
+}
+h2 {
+  text-transform: uppercase;
+}
+
+</style>
+
+<div class="graph">
+
+<h2>Ounces of Gold Produced</h2>
+
+<div class="bar-holder">
+  <div class="bar" style="height: 168.9px">
+    <div class="sides side"></div>
+    <div class="sides front"></div>
+    <div class="top"></div>
+    <label class="value">168,900</label>
+    <label class="year">2007</label>
+  </div>
+</div>
+<div class="bar-holder">
+  <div class="bar" style="height: 175px">
+    <div class="sides side"></div>
+    <div class="sides front"></div>
+    <div class="top"></div>
+    <label class="value">175,000</label>
+    <label class="year">2008</label>
+  </div>
+</div>
+<div class="bar-holder">
+  <div class="bar" style="height: 188px">
+    <div class="sides side"></div>
+    <div class="sides front"></div>
+    <div class="top"></div>
+    <label class="value">188,000</label>
+    <label class="year">2009</label>
+  </div>
+</div>
+<div class="bar-holder">
+  <div class="bar" style="height: 319px">
+    <div class="sides side"></div>
+    <div class="sides front"></div>
+    <div class="top"></div>
+    <label class="value">319,000</label>
+    <label class="year">2010</label>
+  </div>
+</div>
+<div class="bar-holder">
+  <div class="bar" style="height: 350px">
+    <div class="sides side"></div>
+    <div class="sides front"></div>
+    <div class="top"></div>
+    <label class="value">350,000</label>
+    <label class="year">2011</label>
+  </div>
+</div>
+</div>

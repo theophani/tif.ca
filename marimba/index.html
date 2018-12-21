@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title>Marimba</title>
+  <style>
+
+  body {
+    margin: 0;
+    padding: 0;
+    margin-top: 1em;
+  }
+
+  div.row {
+    display: none;
+  }
+  .loaded div.row {
+    display: block;
+  }
+
+  span {
+    display: block;
+    width: 3em;
+    height: 3em;
+    line-height: 3em;
+    float:left;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  div {
+    clear: both;
+    width: 24em;
+    margin: 0 auto;
+  }
+
+  </style>
+</head>
+<body>
+
+  <div class="row">
+    <span id="key1">1</span>
+    <span id="key2">2</span>
+    <span id="key3">3</span>
+    <span id="key4">4</span>
+  </div>
+
+  <div class="row">
+    <span id="key5">Q</span>
+    <span id="key6">W</span>
+    <span id="key7">E</span>
+    <span id="key8">R</span>
+  </div>
+
+  <div class="row">
+    <span id="key9">A</span>
+    <span id="key10">S</span>
+    <span id="key11">D</span>
+    <span id="key12">F</span>
+  </div>
+
+  <div class="row">
+    <span id="key13">Z</span>
+    <span id="key14">X</span>
+    <span id="key15">C</span>
+    <span id="key16">V</span>
+  </div>
+
+</body>
+<script src="loadsounds.js"></script>
+<script src="marimba.js"></script>
+</html>

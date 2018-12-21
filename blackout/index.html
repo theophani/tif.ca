@@ -1,0 +1,311 @@
+<html>
+<html>
+<head>
+
+   <meta name="Author" content="Tiffany">
+   <title>BLACKOUT!</title>
+
+<!--
+this was written prior to 2002, likely in 1999,
+and other than this comment, has been unchanged since then
+-->
+
+<style>
+<!--
+A{text-decoration:none}
+-->
+</style>
+
+<script language="Javascript"> <!--
+
+	browser = (((navigator.appName == "Netscape") && ( 3<= parseInt(navigator.appVersion) )) || ((navigator.appName == "Microsoft Internet Explorer") && ( 4 <= parseInt(navigator.appVersion) )))
+
+        if ( browser) {
+
+		flag = false
+
+                block = new MakeImageArray(2)
+
+                block[1].src = "black00.gif"
+                block[2].src = "white00.gif"
+
+                nextcolour = new MakeNumberArray(25)
+
+		for ( var i=1; i<=26; i++ ) {
+			nextcolour[i].src = 2
+		}
+
+	}                
+
+        function MakeImageArray(n) {
+                this.length = n
+                for (var i = 1; i<=n; i++) {
+                        this[i] = new Image()
+                }
+
+              return this
+        }
+
+        function MakeNumberArray(n) {
+                this.length = n
+                for (var i = 1; i<=n; i++) {
+                        this[i] = new Number()
+                }
+
+              return this
+        }
+
+        function InitializeBoard() {
+                for (var i = 0; i<25; i++) {
+			if ( Math.random() < 0.5 ) switcharoo(i)
+		}
+		flag = true
+        }
+
+	function switcharoo(i) {
+
+		if ( !GameOver() ) {
+
+		document.images[i].src=block[nextcolour[i+1].src].src
+		flipstatus(i+1)
+
+		if ( i%5 != 0 ) {
+			document.images[i-1].src=block[nextcolour[i].src].src
+			flipstatus(i)
+		}
+
+		if ( i%5 != 4 ) {
+			document.images[i+1].src=block[nextcolour[i+2].src].src
+			flipstatus(i+2)
+		}
+
+		if ( 4 < i ) {
+			document.images[i-5].src=block[nextcolour[i-4].src].src
+			flipstatus(i-4)
+		}
+
+		if ( i < 20 ) {
+			document.images[i+5].src=block[nextcolour[i+6].src].src
+			flipstatus(i+6)
+		}
+		
+		}
+
+		if ( GameOver() ) SayWin()
+	}
+
+	function flipstatus(i) {
+		if ( nextcolour[i].src == 1) nextcolour[i].src = 2
+		else nextcolour[i].src = 1
+	}
+
+	function GameOver() {
+		if (flag) {
+			this.src = true
+			for (var i=2; i<=25; i++) {
+				poo = ((nextcolour[1].src == nextcolour[i].src) && this.src )
+				if (poo) this.src = true
+				else this.src = false
+			}
+		} else this.src = false
+		return this.src
+	}
+
+	function SayWin() {
+		document.images[11].src = "W.gif"
+		document.images[12].src = "I.gif"
+		document.images[13].src = "N.gif"
+	}
+
+// -->
+
+</script>
+
+
+</head>
+
+<body text="#FFFFFF" bgcolor="#0080C0"
+      link="#000066" vlink="#000066" alink="#000066"
+      onLoad = "InitializeBoard(); return true" >
+
+<br><br>
+
+<center>
+
+<table>
+
+<tr>
+
+<td valign="center" cellpadding="0">
+<font face="verdana,arial" size="-1">
+
+<center><b>blackout!</b>
+
+<br>
+<br>
+
+<map name="box0"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(0) ; return true"></map>
+<map name="box1"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(1) ; return true "></map>
+<map name="box2"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(2) ; return true "></map>
+<map name="box3"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(3) ; return true "></map>
+<map name="box4"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(4) ; return true "></map>
+<map name="box5"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(5) ; return true "></map>
+<map name="box6"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(6) ; return true "></map>
+<map name="box7"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(7) ; return true "></map>
+<map name="box8"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(8) ; return true "></map>
+<map name="box9"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(9) ; return true "></map>
+<map name="box10"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(10) ; return true "></map>
+<map name="box11"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(11) ; return true "></map>
+<map name="box12"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(12) ; return true "></map>
+<map name="box13"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(13) ; return true "></map>
+<map name="box14"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(14) ; return true "></map>
+<map name="box15"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(15) ; return true "></map>
+<map name="box16"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(16) ; return true "></map>
+<map name="box17"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(17) ; return true "></map>
+<map name="box18"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(18) ; return true "></map>
+<map name="box19"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(19) ; return true "></map>
+<map name="box20"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(20) ; return true "></map>
+<map name="box21"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(21) ; return true "></map>
+<map name="box22"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(22) ; return true "></map>
+<map name="box23"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(23) ; return true "></map>
+<map name="box24"><area shape=rect coords="0,0,40,40"
+                  href="#"
+                  onClick="switcharoo(24) ; return true "></map>
+
+<!-- row 1 -->
+<nobr>
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box0">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box1">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box2">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box3">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box4">
+</nobr><br>
+
+<!-- row 2 -->
+<nobr>
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box5">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box6">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box7">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box8">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box9">
+</nobr><br>
+
+<!-- row 3 -->
+<nobr>
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box10">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box11">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box12">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box13">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box14">
+</nobr><br>
+
+<!-- row 4 -->
+<nobr>
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box15">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box16">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box17">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box18">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box19">
+</nobr><br>
+
+<!-- row 5 -->
+<nobr>
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box20">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box21">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box22">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box23">
+<img src="black00.gif" width="40" height="40" border="0" ismap
+usemap="#box24">
+</nobr><br>
+
+</center>
+
+<p>Can you win?
+
+<p>Can you even figure out the rules?
+
+<p><font size="+0"><div align="right">
+<a href="../">[ go home ]</a>
+</div>
+
+</td>
+</tr>
+
+</table>
+</center>
+
+</body>
+</html>
+
