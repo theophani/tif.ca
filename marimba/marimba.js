@@ -119,7 +119,9 @@ var highlightKey = function (key) {
   el.style.backgroundColor =  nextColour(colours, currentColour);
 };
 
-var loadMarimba = function () {
+var loadMarimba = function (e) {
+  e.stopPropagation();
+
   var AudioContext = window.AudioContext || window.webkitAudioContext;
 
   try {
