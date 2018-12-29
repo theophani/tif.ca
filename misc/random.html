@@ -4,13 +4,11 @@
 
 const n = 18;
 
-function getRandom(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+// select random int, 1 thru n
 
-const i = getRandom(1, n);
+const i = Math.floor(Math.random() * n) + 1;
 
-// goto random misc page, 01 thru 18
+// goto random misc page, 01 thru n
 
 const page = (i + '').padStart(2, '0');
 
