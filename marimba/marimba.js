@@ -127,9 +127,10 @@ var loadOnce = function () {
 
     // requires keyMap, playSound and highlightKey in globel scope
     document.addEventListener('keydown', function (e) {
-      if (keyMap[e.keyCode]) {
-        playSound(sounds['woody'+ keyMap[e.keyCode]]);
-        highlightKey(keyMap[e.keyCode]);
+      var key = keyMap[e.keyCode];
+      if (key) {
+        playSound(sounds['woody'+ key]);
+        highlightKey(key);
       }
     });
   } catch (e) {
