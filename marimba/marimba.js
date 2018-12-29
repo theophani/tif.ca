@@ -113,8 +113,7 @@ var nextColour =  function (colours, colour) {
 };
 
 // requires nextColour to exist in global scope
-var highlightKey = function (keyMap, keyCode) {
-  var key = keyMap[keyCode];
+var highlightKey = function (key) {
   var el = document.getElementById('key'+key);
   var currentColour = el.style.backgroundColor;
   el.style.backgroundColor =  nextColour(colours, currentColour);
@@ -130,7 +129,7 @@ var loadOnce = function () {
     document.addEventListener('keydown', function (e) {
       if (keyMap[e.keyCode]) {
         playSound(sounds['woody'+ keyMap[e.keyCode]]);
-        highlightKey(keyMap, e.keyCode);
+        highlightKey(keyMap[e.keyCode]);
       }
     });
   } catch (e) {
