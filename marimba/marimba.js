@@ -2,9 +2,10 @@
 
 var context;
 
-var ready = function () {
+var ready = function (sounds) {
   // allow the user to see the interface, indicating that they can play now
   document.body.className = 'loaded';
+  playSound(sounds['woody1']);
 };
 
 var soundHash = (function () {
