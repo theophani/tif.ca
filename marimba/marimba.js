@@ -120,7 +120,7 @@ var highlightKey = function (keyMap, keyCode) {
   el.style.backgroundColor =  nextColour(colours, currentColour);
 };
 
-document.addEventListener('click', function () {
+var loadOnce = function () {
   try {
     context = new AudioContext();
 
@@ -135,7 +135,22 @@ document.addEventListener('click', function () {
     });
   } catch (e) {
     var el = document.createElement('p');
-    el.innerHTML = 'Sorry, this only work in <a href="http://www.google.com/chrome">Chrome</a> right now.';
+    el.innerHTML = 'Sorry, this isn’t working :/';
+    el.innerHTML += `<pre>${e}</pre>`;
+
     document.body.appendChild(el);
   }
-});
+
+  loadOnce = function () {
+    // noop
+  };
+};
+
+window.addEventListener('touchstart', function () {
+  loadOnce();
+}, false);
+
+document.addEventListener('click', function () {
+  loadOnce();
+})
+

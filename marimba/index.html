@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=0.9">
   <title>Marimba</title>
   <style>
 
@@ -9,9 +12,11 @@
     margin-top: 1em;
   }
 
-  .instructions {
-    line-height: 3em;
-    font-size: 2em;
+  div.instructions {
+    width: 100%;
+    line-height: 1.25;
+    font-size: 1.5em;
+    margin-top: 2em;
     text-align: center;
   }
 
@@ -79,6 +84,7 @@
   </div>
 
 </body>
+<script> var AudioContext = window.AudioContext || window.webkitAudioContext; </script>
 <script src="loadsounds.js"></script>
 <script src="marimba.js"></script>
 </html>
