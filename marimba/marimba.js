@@ -140,6 +140,11 @@ var loadMarimba = function (e) {
       var key = keyMap[e.keyCode];
       playAndHighlight(key);
     });
+
+    document.addEventListener('touchstart', function (e) {
+      var key = e.target.id.replace(/key/, '');
+      playAndHighlight(key);
+    });
   } catch (e) {
     var el = document.createElement('p');
     el.innerHTML = 'Sorry, this isn’t working :/';
