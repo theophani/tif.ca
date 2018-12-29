@@ -1,22 +1,20 @@
-<?php
+<script>
 
 // n is the total number of misc pages
 
-$n = 18;
+const n = 18;
 
-//this can be removed if I ever upgrade to php4
-function make_seed() {
-	list($usec, $sec) = explode(' ', microtime());
-        return (float) $sec + ((float) $usec * 100000);
-        }
-srand(make_seed());
-//gross seeding ends here
+function getRandom(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-$i = rand(1,$n);
+const i = getRandom(1, n);
 
 // goto random misc page
 
-if ($i<10) { header("Location: http://www.tif.ca/misc/misc0$i.html"); }
-else       { header("Location: http://www.tif.ca/misc/misc$i.html");  }
+if (i<10)  { document.location = `misc0${i}.html`; }
+else       { document.location = `misc${i}.html`;  }
 
-?>
+</script>
