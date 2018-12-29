@@ -125,13 +125,16 @@ var loadOnce = function () {
 
     var sounds = loadSounds(soundHash, ready);
 
-    // requires keyMap, playSound and highlightKey in globel scope
-    document.addEventListener('keydown', function (e) {
-      var key = keyMap[e.keyCode];
+    var playAndHighlight = function (key) {
       if (key) {
         playSound(sounds['woody'+ key]);
         highlightKey(key);
       }
+    };
+
+    document.addEventListener('keydown', function (e) {
+      var key = keyMap[e.keyCode];
+      playAndHighlight(key);
     });
   } catch (e) {
     var el = document.createElement('p');
