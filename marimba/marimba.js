@@ -1,12 +1,6 @@
 "use strict";
 
-try {
-  var context = new webkitAudioContext();
-} catch (e) {
-  var el = document.createElement('p');
-  el.innerHTML = 'Sorry, this only work in <a href="http://www.google.com/chrome">Chrome</a> right now.';
-  document.body.appendChild(el);
-}
+var context;
 
 var ready = function () {
   // allow the user to see the interface, indicating that they can play now
@@ -21,15 +15,13 @@ var soundHash = (function () {
   return hash;
 }());
 
-var sounds = loadSounds(soundHash, ready);
-
 // requires context to exist in global scope
 var playSound =  function (buffer, at) {
   at = at || 0;
   var source = context.createBufferSource(); // creates a sound source
   source.buffer = buffer;                    // tell the source which sound to play
   source.connect(context.destination);       // connect the source to the context's destination (the speakers)
-  source.noteOn(at);                         // play the source at time 'a'
+  source.start(at);                          // play the source at time 'a'
 };
 
 var keyMap = {
@@ -51,14 +43,6 @@ var keyMap = {
   67: 15,
   86: 16
 };
-
-// requires keyMap, playSound and highlightKey in globel scope
-document.addEventListener('keydown', function (e) {
-  if (keyMap[e.keyCode]) {
-    playSound(sounds['woody'+ keyMap[e.keyCode]]);
-    highlightKey(keyMap, e.keyCode);
-  }
-});
 
 // requires context and playSound to exist in global scope
 var playSequence = function (sequence, tempo, bars, beats) {
@@ -135,3 +119,23 @@ var highlightKey = function (keyMap, keyCode) {
   var currentColour = el.style.backgroundColor;
   el.style.backgroundColor =  nextColour(colours, currentColour);
 };
+
+document.addEventListener('click', function () {
+  try {
+    context = new AudioContext();
+
+    var sounds = loadSounds(soundHash, ready);
+
+    // requires keyMap, playSound and highlightKey in globel scope
+    document.addEventListener('keydown', function (e) {
+      if (keyMap[e.keyCode]) {
+        playSound(sounds['woody'+ keyMap[e.keyCode]]);
+        highlightKey(keyMap, e.keyCode);
+      }
+    });
+  } catch (e) {
+    var el = document.createElement('p');
+    el.innerHTML = 'Sorry, this only work in <a href="http://www.google.com/chrome">Chrome</a> right now.';
+    document.body.appendChild(el);
+  }
+});

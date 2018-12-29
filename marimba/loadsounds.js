@@ -1,6 +1,6 @@
 var loadSounds = function (soundHash, callback, progress) {
 
-  var context = new webkitAudioContext();
+  var context = new AudioContext();
 
   var sounds = {
     loaded: [],
