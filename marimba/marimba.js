@@ -120,6 +120,8 @@ var highlightKey = function (key) {
 };
 
 var loadOnce = function () {
+  var AudioContext = window.AudioContext || window.webkitAudioContext;
+
   try {
     context = new AudioContext();
 
