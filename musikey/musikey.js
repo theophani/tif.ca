@@ -36,14 +36,13 @@
     document.body.appendChild(musicbox);
 
     var sounds = document.getElementsByTagName('audio');
-    Array.prototype.unshift.call(sounds, '');
 
     var playSound =  function (buffer, at) {
       at = at || 0;
       var source = context.createBufferSource(); // creates a sound source
       source.buffer = buffer;                    // tell the source which sound to play
       source.connect(context.destination);       // connect the source to the context's destination (the speakers)
-      source.noteOn(at);                         // play the source at time 'a'
+      source.start(at);                          // play the source at time 'a'
     };
 
     var keyMap = {
@@ -99,19 +98,30 @@
 
   };
 
-  try {
-    var context = new webkitAudioContext();
-    goAhead(context);
-  } catch (e) {
-    var el = document.createElement('p');
-    el.style.position = 'fixed';
-    el.style.top = '0';
-    el.style.left = '0';
-    el.style.backgroundColor = 'white';
-    el.style.color = 'black';
-    el.style.display = 'block';
-    el.style.padding = '10px';
-    el.innerHTML = 'Sorry, this only work in <a href="http://www.google.com/chrome">Chrome</a> right now.';
-    document.body.appendChild(el);
+  function loadMusikey (el) {
+    try {
+      var context = new AudioContext();
+      document.body.removeChild(el);
+      goAhead(context);
+    } catch (e) {
+      el.innerHTML = 'Sorry, musikey isn’t working :/';
+    }
   }
+
+  var el = document.createElement('p');
+  el.style.position = 'fixed';
+  el.style.top = '0';
+  el.style.left = '0';
+  el.style.backgroundColor = 'white';
+  el.style.color = 'black';
+  el.style.display = 'block';
+  el.style.padding = '10px';
+  el.style.textShadow = '#eee 1px 1px 1px';
+  el.innerHTML = 'Click here to turn on musikey';
+  document.body.appendChild(el);
+
+  el.addEventListener('click', function () {
+    loadMusikey(el);
+  });
+
 } ());
