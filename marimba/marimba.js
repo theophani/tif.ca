@@ -16,7 +16,7 @@ var soundHash = (function () {
 }());
 
 // requires context to exist in global scope
-var playSound =  function (buffer, at) {
+var playSound = function (buffer, at) {
   at = at || 0;
   var source = context.createBufferSource(); // creates a sound source
   source.buffer = buffer;                    // tell the source which sound to play
@@ -153,9 +153,8 @@ var loadOnce = function () {
 
 window.addEventListener('touchstart', function () {
   loadOnce();
-}, false);
+});
 
 document.addEventListener('click', function () {
   loadOnce();
-})
-
+});
