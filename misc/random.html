@@ -12,9 +12,10 @@ function getRandom(min, max) {
 
 const i = getRandom(1, n);
 
-// goto random misc page
+// goto random misc page, 01 thru 18
 
-if (i<10)  { document.location = `misc0${i}.html`; }
-else       { document.location = `misc${i}.html`;  }
+const page = (i + '').padStart(2, '0');
+
+document.location = `misc${page}.html`;
 
 </script>
