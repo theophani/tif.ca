@@ -119,7 +119,7 @@ var highlightKey = function (key) {
   el.style.backgroundColor =  nextColour(colours, currentColour);
 };
 
-var loadOnce = function () {
+var loadMarimba = function () {
   var AudioContext = window.AudioContext || window.webkitAudioContext;
 
   try {
@@ -146,15 +146,8 @@ var loadOnce = function () {
     document.body.appendChild(el);
   }
 
-  loadOnce = function () {
-    // noop
-  };
+  document.body.removeChild(instructions);
 };
 
-window.addEventListener('touchstart', function () {
-  loadOnce();
-});
-
-document.addEventListener('click', function () {
-  loadOnce();
-});
+instructions.ontouchstart = loadMarimba;
+instructions.onclick = loadMarimba;
