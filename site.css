@@ -1,0 +1,636 @@
+body {
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin: 0;
+    padding-bottom: 5em;
+    background-color: #fff;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: #a4804c61;
+}
+
+body.thought {
+    color: #fff;
+    background-color: #333;
+}
+
+.page {
+    padding: 0em 1.5em 1.5em 1.5em;
+}
+
+.page > * {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.homepage .page {
+    padding: 2em 2em 4em 2em;
+}
+
+#intro {
+    padding-bottom: 4em;
+}
+
+ul {
+    line-height: 1.3;
+}
+
+a {
+    color: #8c6e40; /* higher contrast against white than #A4814C */
+    text-decoration: none;
+    border-bottom: 1px solid #8c6e40; /* higher contrast against white than #A4814C */
+}
+
+.thought main a:not(.button) {
+    color: #666;
+    border-bottom-color: #666;
+}
+
+.thought main a:hover:not(.button) {
+    color: #333;
+    border-bottom-color: #333;
+}
+
+.aside {
+    font-style: italic;
+}
+
+a:hover {
+    color: #333;
+    border-bottom-color: #333;
+}
+
+h1 {
+    font-size: 1.4em;
+    font-weight: 750;
+    margin: 1em 0;
+}
+
+.thought .subtitle {
+    font-style: italic;
+    font-size: 0.75em;
+    font-weight: normal;
+    display: inline-block;
+    margin-top: 0.25em;
+}
+
+h1 a:link, h1 a:hover, h1 a:visited, h1 a:active {
+    text-decoration: none;
+    border-bottom: none;
+    color: #333;
+}
+
+.thought h1 a:link,
+.thought h1 a:hover,
+.thought h1 a:visited,
+.thought h1 a:active {
+    color: #fff;
+}
+
+h1:after {
+    content: ".";
+}
+
+h3:has(+ h4) {
+    margin-bottom: 0;
+}
+
+h3+h4 {
+    margin-top: 0;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.homepage .tagline {
+    margin-top: 1em;
+}
+
+.tagline {
+    font-size: 2.6em;
+    margin-bottom: 1em;
+    line-height: 1.2;
+    padding-top: 0;
+    margin-top: 0;
+    background: linear-gradient(140deg, #4C8A89 12.09%, #404445 42.58%, #A4814C 84.96%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+header h2 {
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
+    font-weight: normal;
+}
+
+.cols {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 40px;
+}
+
+.cols > div {
+    flex: 300px;
+}
+
+.cols > div.col-sidebar {
+    flex: 60px;
+}
+
+.cols > div.col-main {
+    flex: 450px;
+}
+
+.cols p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.col-sidebar h2 {
+    margin: 0;
+}
+
+.col-main h3 {
+    margin-top: 0;
+}
+
+#packages .cols {
+    row-gap: 0;
+}
+
+#about-us > div {
+    text-align: center;
+}
+
+#about-us > div ul {
+    text-align: left;
+}
+
+#about-us .contact-methods > span:not(:last-child):after {
+    padding: 0 0.5em;
+    content: " | ";
+    color: #999;
+}
+
+.page ul {
+    list-style: square;
+}
+
+.page li {
+    margin-bottom: 0.5em;
+}
+
+.image-frame {
+    width: 175px;
+    height: 175px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.image-frame img {
+    display: inline;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+
+.bio .image-frame {
+    width: 250px;
+    height: 250px;
+}
+
+.byline {
+    font-size: 0.8em;
+    color: #8b8b8b;
+    font-variant: small-caps;
+}
+
+.byline span {
+    vertical-align: middle;
+}
+
+.byline .image-frame {
+    width: 50px;
+    height: 50px;
+}
+
+.byline .author::after {
+    content: " | "
+}
+
+.byline .author {
+    padding-left: 0.5em;
+}
+
+header {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em 2em;
+}
+
+main header {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+header.breadcrumbs {
+    font-size: 0.8em;
+    color: #8b8b8b;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #ccc;
+    margin-bottom: 2em;
+    text-align: right;
+}
+
+.header.breadcrumbs a {
+    border-bottom-width: 0;
+    font-weight: bold;
+}
+
+.header.breadcrumbs a:hover {
+    border-bottom-width: 1px;
+}
+
+.thought article, .thought header, .thought section {
+    max-width: 45rem;
+    margin: 0 auto;
+}
+
+.thought main {
+    background-color: #eee;
+    color: #111;
+    padding: 0.5em 2em 3em 2em;
+}
+
+.thought p, .thought ol, .thought ul, .thought section {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    line-height: 1.5;
+}
+
+.thought article h3 {
+    margin-top: 1.5em;
+}
+
+.thought.index article h3 {
+    margin-bottom: 0.5em;
+}
+
+.thought article li {
+    margin-bottom: 0.5em;
+}
+
+.author-bio {
+    padding: 1em 0;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #ccc;
+    font-style: italic;
+}
+
+.index .author-bio {
+    border-top-width: 0;
+    margin-top: 0;
+}
+
+#what-we-offer {
+    background: linear-gradient(140deg, #4C8A89 12.09%, #A4814C 84.96%);
+}
+
+#what-we-offer h2 {
+    color: #fff;
+}
+
+#about-us .cols,
+#what-we-offer .cols {
+    row-gap: 40px;
+}
+
+#what-we-offer .col {
+    padding: 0.75em 2em 2.5em 2em;
+}
+
+.offering {
+    background-color: #ffffff99;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.offering p, .offering ul {
+    font-size: 0.9em;
+}
+
+.offering p.summary {
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.footnote {
+    font-size: 0.8em;
+}
+
+.testimonial {
+    position: relative;
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+#testimonials .cols {
+    gap: 30px;
+}
+
+.testimonial p {
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.testimonial > p:first-child {
+    text-indent: 1.75em;
+}
+
+.testimonial .attribution {
+    text-align: right;
+    margin-top: -0.5em;
+    font-style: normal;
+    font-size: 0.8em;
+}
+
+@media (min-width: 724px) {
+    .testimonial:nth-child(even) {
+        margin-top: 4em;
+    }
+}
+
+@media (max-width: 723px) {
+    .testimonial:nth-child(even) {
+        margin-left: 2em;
+    }
+
+    .testimonial:nth-child(odd) {
+        margin-right: 4em;
+    }
+}
+
+.testimonial:before {
+    content: "“";
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 72px;
+    position: absolute;
+    left: -13px;
+    top: -19px;
+}
+
+#final-pitch, #newsletter-and-thoughts {
+    text-align: center;
+    padding-bottom: 4em;
+}
+
+#newsletter-and-thoughts iframe {
+    width: 100%;
+    max-width: 480px;
+}
+
+.page.reverse {
+    background: linear-gradient(140deg, #0e3a39 12.09%, #63461a 84.96%);
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    margin: 1em auto 2em auto;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #ccc;
+    font-size: 0.8em;
+    padding: 0;
+}
+
+.footer-container {
+    padding: 0.5em;
+    line-height: 2;
+}
+
+footer span {
+    white-space: nowrap;
+}
+
+footer a {
+    color: #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+footer a:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+footer span:not(:last-child):after {
+    padding: 0 0.5em;
+    content: " | ";
+    color: rgb(99, 99, 99);
+}
+
+footer .names a:link, footer .names a:hover, footer .names a:visited, footer .names a:visited {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+@media (max-width: 600px) {
+    footer {
+        font-size: 0.6em;
+    }
+}
+
+table {
+    border-spacing: 0;
+}
+
+var {
+    font-family: 'monospace';
+    font-style: normal;
+}
+
+.button {
+    color: #111;
+    font-size: 1em;
+    border: 1px solid #bbb;
+    background: #e6e6e6 url(/images/button-bg.png) 50% 50% repeat-x;
+    font-weight: normal;
+    border-radius: 4px;
+    padding: 0.4em 1em;
+    cursor: pointer;
+}
+
+.button:not(:disabled):hover {
+    border-color: #999;
+    background-image: url(/images/button-bg-hover.png);
+    color: #000;
+}
+
+.call-to-action {
+    text-align: center;
+    padding: 0.25em 0 1.5em 0;
+}
+
+.call-to-action p, .call-to-action .button {
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    max-width: 24rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.call-to-action .button {
+    color: #eee;
+    border: none;
+    background: linear-gradient(140deg, #4C8A89 12.09%, #404445 42.58%, #A4814C 84.96%);
+    opacity: 0.9;
+    display: inline-block;
+}
+
+.call-to-action .button:hover {
+    color: white;
+    border: none;
+    opacity: 1;
+    background: linear-gradient(140deg, #4C8A89 12.09%, #404445 42.58%, #A4814C 84.96%);
+}
+
+.print-only {
+    display: none;
+}
+
+.cv .col-sidebar h2 {
+    margin-bottom: 0;
+}
+
+#skills-and-technologies h3 {
+    font-size: 1em;
+}
+
+#skills ul {
+    columns: 2;
+    list-style: none;
+    letter-spacing: 0.03em;
+    padding-left: 0;
+    margin-bottom: 0.5em;
+}
+
+#skills li {
+    margin-bottom: 0.75em;
+}
+
+#skills>div {
+    border: solid white;
+    border-width: 2px 0px;
+    padding: 0.5em 1.5em;
+}
+
+body.cv #intro {
+    padding-bottom: 1.5em;
+}
+
+@media (max-width: 600px) {
+    #skills ul {
+        columns: 1;
+    }
+}
+
+@media print {
+    .tagline {
+        font-size: 2.5em;
+        background: black;
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    .cols>div {
+        flex: 270px;
+    }
+
+    #skills ul {
+        columns: 2;
+    }
+
+    body.cv header, body.cv footer {
+        display: none;
+    }
+
+    body.cv {
+        font-size: 0.8em;
+        color: #333;
+        line-height: 1.3;
+        padding: 0;
+    }
+
+    body.cv #packages {
+        page-break-before: always;
+    }
+
+    .testimonial:nth-child(even) {
+        margin-left: 0;
+    }
+
+    .testimonial:nth-child(odd) {
+        margin-right: 0;
+    }
+
+    .testimonial:before {
+        padding-left: 10px;
+        font-size: 60px;
+    }
+
+    #skills > div {
+        border-color: #333;
+        border-width: 1px 0;
+        padding: 0.5em 0;
+    }
+
+    .page.reverse {
+        background: transparent;
+        color: #333;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-style: solid;
+        border-color: #333;
+        border-width: 1px;
+        margin: 1em 1em 3em 1em;
+        padding: 1em 2em 1em 2em;
+    }
+
+    body.cv #intro .description {
+        font-size: 1.2em;
+    }
+
+    .col-main h4, #skills-and-technologies h3 {
+        margin-bottom: 0.5em;
+    }
+
+    .col-main ul {
+        margin-top: 0;
+    }
+
+    body.cv .image-frame {
+        width: 110px;
+        height: 110px;
+    }
+
+    .web-only {
+        display: none;
+    }
+
+    .print-only {
+        display: initial;
+    }
+}
